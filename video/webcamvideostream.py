@@ -10,9 +10,11 @@ class WebcamVideoStream:
 		#set withdth * height
 
 		
-		self.stream.set(cv2.CAP_PROP_FRAME_WIDTH, w)
-		self.stream.set(cv2.CAP_PROP_FRAME_HEIGHT, h)
-		self.stream.set(cv2.CAP_PROP_FPS, fps)
+		self.stream.set(cv2.CAP_PROP_CONVERT_RGB, False)
+		self.stream.set(cv2.CAP_PROP_FOURCC, 0x59565955)
+		self.stream.set(cv2.CAP_PROP_FRAME_WIDTH, 1280)
+		self.stream.set(cv2.CAP_PROP_FRAME_HEIGHT, 960)
+		self.stream.set(cv2.CAP_PROP_FPS, 30)
 
 		#get width/height/framerate and print it
 		print("fps: ", self.stream.get(cv2.CAP_PROP_FPS) , " width: " , self.stream.get(cv2.CAP_PROP_FRAME_WIDTH) , " height: " , self.stream.get(cv2.CAP_PROP_FRAME_HEIGHT))
